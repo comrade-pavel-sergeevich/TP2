@@ -29,8 +29,15 @@ const checkHash = () => {
 		makeRequest(window.location.hash.slice(1)+'.php');
 	}
 	else{
-		if(url!=="signup"&url!=="login"&url!=="home") window.location.hash="home";
-		document.getElementById('ulmenu').outerHTML="<ul class=\"top-menu\" id=\"ulmenu\"><li class=\"menu-item\" id=\"home\" onclick=\"makeRequest('home.php');\">Home</li><li class=\"menu-item\"\"></li><li class=\"menu-item\" id=\"reg\" onclick=\"makeRequest('signup.php');\">Register</li><li class=\"menu-item\"\"></li><li class=\"menu-item\" id=\"log\" onclick=\"makeRequest('login.php');\">Log in</li></ul>"
+		if(url!=="signup"&url!=="login"&url!=="menu"&url!=="home") window.location.hash="home";
+		document.getElementById('ulmenu').outerHTML=`
+		<ul class="top-menu" id="ulmenu">
+		<li class="menu-item" id="home" onclick="makeRequest('home.php');">Home</li>
+		<li class="menu-item" id="menu"onclick="makeRequest('menu.php');window.scrollTo(0, 0);">Menu</li>
+		<li class="menu-item" id="basket"onclick="makeRequest('basket.php');">Basket</li>
+		<li class="menu-item" id="reg" onclick="makeRequest('signup.php');">Register</li>	
+		<li class="menu-item" id="log" onclick="makeRequest('login.php');">Log in</li></ul>
+		`;
 		makeRequest(window.location.hash.slice(1)+'.php');
 	}
 	}
@@ -82,7 +89,7 @@ function register(){
 	if(pwd!=pwdrepeat){
 		document.getElementById('error').innerHTML='<span style = "color:red">Пароли не совпадают</span>';return;}	
 	if(document.getElementById('email').validity.typeMismatch){
-   document.getElementById('error').innerHTML='<span style = "color:red">Невалидный email</span>';return;;
+ document.getElementById('error').innerHTML='<span style = "color:red">Невалидный email</span>';return;;
 }
 	$.ajax({
 	type: 'Get',

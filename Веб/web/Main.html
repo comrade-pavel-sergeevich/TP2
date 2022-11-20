@@ -8,21 +8,35 @@
 </head>
 
 <body onload="checkHash();">
-<header><div class="menu">
+<header><div class="top-menu">
 <img src="css/лого.jpg" style="height:90%">
+
+<div style="display:flex; flex-direction: column;height:100%;width:100%">
+<p style="color:white;margin-bottom:0;font-size: 24px;margin-top:5px;">Сладкий хлеб</p>
+<div style="display:flex; flex-direction: row;height:50%; align-items:center">
 <input type="text" class="search">
-<img src="css/basket.png" style="height:90%">
+<img src="css/search_pic.png" style="height:50%"></div>
+</div>
+
+<img src="css/basket.png" style="height:90%;cursor: pointer;" onclick="makeRequest('basket.php');" >
 </div>
 </header>
-<div style="height:40px; color:transparent">Кто прочитал, тому хорошего дня</div>
-							<h1>Сладкий хлеб</h1>
+
+							
 <div class="mainc">
 <main id="wrapper"><div class="login-box"></div>
 
 </main>
-<img src="css/sweat.jpg" style="height:90%">
+
 </div>
-<div class="downskoe-menu"><ul class="top-menu" id="ulmenu"><li class="menu-item" id="home" onclick="makeRequest('home.php');">Home</li><li class="menu-item" "=""></li><li class="menu-item" id="reg" onclick="makeRequest('signup.php');">Register</li><li class="menu-item" "=""></li><li class="menu-item" id="log" onclick="makeRequest('login.php');">Log in</li></ul></div>
+<div class="downskoe-menu">
+	<ul class="top-menu" id="ulmenu">
+		<li class="menu-item" id="home" onclick="makeRequest('home.php');">Home</li>
+		<li class="menu-item" id="menu"onclick="makeRequest('menu.php');window.scrollTo(0, 0);">Menu</li>
+		<li class="menu-item" id="basket"onclick="makeRequest('basket.php');">Basket</li>
+		<li class="menu-item" id="reg" onclick="makeRequest('signup.php');">Register</li>	
+		<li class="menu-item" id="log" onclick="makeRequest('login.php');">Log in</li></ul>
+	</div>
 <footer></footer>	
 
 
