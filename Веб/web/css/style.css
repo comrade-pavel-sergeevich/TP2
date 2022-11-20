@@ -43,11 +43,11 @@ input[type="text"][ class="search"]{
 li[class="menu-item"] {
     /*margin-right: 19%;*/
     line-height: 36px;
-    font-size: 20px;
+    font-size: 30px;
     /*font-family: "Georgia";*/
     cursor: pointer;
-	background-color:#eab471;
-	border-radius:3px;
+	background-color:#ebb572;
+	border-radius:6px;
 	padding:6px;
 	min-width:80px;
 	text-align:center;
@@ -82,7 +82,7 @@ header {
     width: 40%;
     z-index: 2;
     background: inherit;
-	background-color:#383838;
+	background-color:#222121;
 	border-radius:6px;
 		margin-bottom:15px;
 }
@@ -285,4 +285,68 @@ text-align-last: center;
 -moz-text-align-last: center;
 -ms-text-align-last: center;
 -o-text-align-last: center;
+}
+
+.slider {
+    -webkit-appearance: none;
+    margin-left: 5px;
+    width: 95%;
+    height: 10px;
+    border-radius: 5px;  
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.8;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%; 
+    background: #ebb572;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #ebb572;
+    cursor: pointer;
+}
+.button_menu
+{
+    width: 90px;
+    height: 30px;
+    cursor: pointer;
+    background: #ebb572;
+    border-radius: 5px;
+    border: 2px solid white;
+}
+
+.menu_izdeliya
+{
+    width: 300px;
+    height: 200px;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-right: 100px;
+}
+.menu_text
+{
+    font-family: Helvetica;
+    font-size: 12pt;
+    font-style: italic;
+    font-weight: bold;
+}
+.price
+{
+    margin-left: -240px;
+    font-family: Helvetica;
+    font-size: 10pt;
+    font-style: italic;
+    font-weight: bold;    
 }
