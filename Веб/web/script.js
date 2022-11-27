@@ -29,7 +29,7 @@ const checkHash = () => {
 		makeRequest(window.location.hash.slice(1)+'.php');
 	}
 	else{
-		if(url!=="signup"&url!=="login"&url!=="basket"&url!=="menu"&url!=="home") window.location.hash="home";
+		if(url!=="signup"&url!=="login"&url!=="basket"&url!=="admin"&url!=="menu"&url!=="home") window.location.hash="home";
 		document.getElementById('ulmenu').outerHTML=`
 		<ul class="top-menu" id="ulmenu">
 		<li class="menu-item" id="home" onclick="makeRequest('home.php');">Home</li>
