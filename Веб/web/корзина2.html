@@ -1,0 +1,116 @@
+<html><head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=cp1251">
+<script type="text/javascript" language="javascript" src="script.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<link rel="stylesheet" href="css/style.css">
+<title> Кофейня "Сладкий хлеб": Главная </title>
+</head>
+
+<body onload="checkHash();">
+<header><div class="top-menu">
+<img src="css/лого.jpg" style="height:90%">
+
+<div style="display:flex; flex-direction: column;height:100%;width:100%">
+<p style="color:white;margin-bottom:0;font-size: 24px;margin-top:5px;">Сладкий хлеб</p>
+<div style="display:flex; flex-direction: row;height:50%; align-items:center">
+<input type="text" class="search">
+<img src="css/search_pic.png" style="height:50%"></div>
+</div>
+
+<img src="css/basket.png" style="height:90%;cursor: pointer;" onclick="makeRequest('basket.php');" >
+</div>
+</header>
+
+							
+<div class="mainc">
+<main id="wrapper"><div class="login-box"></div>
+	<div style = "margin-left: 5px; width:95%; ">
+		<h4 style = "font-size: 30px">Корзина</h4>
+	
+		<input type="submit" name="submit" value="Очистить корзину" style = "border-radius: 10px; width: 200px; background-color: #ebb572" />
+	
+	</div>
+
+	<div style = "display:flex;flex-direction:column; width: 95%">
+		<div style = "display:flex;flex-direction:row;">
+			<p style = "margin-left: 370px">
+			Цена за 1 шт.
+			</p>
+			<p style = "margin-left: 120px">
+			Количество
+			</p>
+			<p style = "margin-left: 100px">
+			Итого
+			</p>
+		</div>
+	
+	</div>
+	
+	<div style="display:flex;flex-direction:row; width:95%; height: 500px">
+		<div style = "height: 100%; width: 70%">
+			<div class = product style="display:flex;flex-direction:row; margin-top: 50px;">
+				<p style = "margin-left: 40px">Фото1<p>
+				<p style = "margin-left: 100px">Название1</p>
+				<p style = "margin-left: 150px">nnnn</p>
+				<input type = "number" style = "width: 60px; margin-left: 160px; height: 40px"/>
+				<p style = "margin-left: 110px">nnnn</p>
+				<input type="submit" name="submit" value="Удалить" style = "border-radius: 10px; width: 200px; background-color: #ebb572; margin-left: 60px" />
+			</div>
+		
+			<div class = product style="display:flex;flex-direction:row; margin-top: 50px;">
+				<p style = "margin-left: 40px">Фото2<p>
+				<p style = "margin-left: 100px">Название2</p>
+				<p style = "margin-left: 150px">nnnn</p>
+				<input type = "number" style = "width: 60px; margin-left: 160px; height: 40px"/>
+				<p style = "margin-left: 110px">nnnn</p>
+				<input type="submit" name="submit" value="Удалить" style = "border-radius: 10px; width: 200px; background-color: #ebb572; margin-left: 60px" />
+			</div>
+			
+			<div class = product style="display:flex;flex-direction:row; margin-top: 50px;">
+				<p style = "margin-left: 40px">Фото2<p>
+				<p style = "margin-left: 100px">Название2</p>
+				<p style = "margin-left: 150px">nnnn</p>
+				<input type = "number" style = "width: 60px; margin-left: 160px; height: 40px"/>
+				<p style = "margin-left: 110px">nnnn</p>
+				<input type="submit" name="submit" value="Удалить" style = "border-radius: 10px; width: 200px; background-color: #ebb572; margin-left: 60px" />
+			</div>
+		
+		
+		
+		</div>
+		
+		<div class="bg-dark text-center text-white" style = " border-radius: 25px; margin-left: 110px; height: 150px; width: 20%; border: 5px double black;">
+				<p>
+				<font size = "6" color = "#ebb572" face="Arial"> Сумма: </font>
+				 
+				
+				</p>
+				<input type="submit" name="submit" value="Оплатить" style = "margin-left: 60 px; margin-top: 50px; border-radius: 10px; width: 99%; background-color: #ebb572" />
+		</div>
+	
+		
+		
+		
+	</div>
+	
+	
+
+
+
+
+</main>
+
+</div>
+<div class="downskoe-menu">
+	<ul class="top-menu" id="ulmenu">
+		<li class="menu-item" id="home" onclick="makeRequest('home.php');">Home</li>
+		<li class="menu-item" id="menu"onclick="makeRequest('menu.php');window.scrollTo(0, 0);">Menu</li>
+		<li class="menu-item" id="basket"onclick="makeRequest('basket.php');">Basket</li>
+		<li class="menu-item" id="reg" onclick="makeRequest('signup.php');">Register</li>	
+		<li class="menu-item" id="log" onclick="makeRequest('login.php');">Log in</li></ul>
+	</div>
+<footer></footer>	
+
+
+</body></html>
