@@ -1,0 +1,97 @@
+<html><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=cp1251">
+    <script type="text/javascript" language="javascript" src="script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title> Кофейня "Сладкий хлеб": Главная </title>
+    </head>
+    
+    <body onload="checkHash();">
+    <header><div class="top-menu">
+    <img src="css/лого.jpg" style="height:90%">
+    
+    <div style="display:flex; flex-direction: column;height:100%;width:100%">
+    <p style="color:white;margin-bottom:0;font-size: 24px;margin-top:5px;">Сладкий хлеб</p>
+    <div style="display:flex; flex-direction: row;height:50%; align-items:center">
+    <input type="text" class="search">
+    <img src="css/search_pic.png" style="height:50%"></div>
+    </div>
+    
+    <img src="css/basket.png" style="height:90%;cursor: pointer;" onclick="makeRequest('basket.php');" >
+    </div>
+    </header>
+    
+                                
+    <div class="mainc">
+    <main id="wrapper"><div class="login-box"></div>
+		<div style="height: 10%; width: 100%; display:flex; flex-direction: row">
+			<input type="submit" name="submit" value="Edit menu" style = "background-color: #ebb572; border-radius: 8px; margin-left: 20px; " />
+			<input type="submit" name="submit" value="Orders" style = "background-color: #ebb572; border-radius: 8px; margin-left: 20px; " />
+		</div>
+		
+		<div style="height: 10%; width: 100%;">
+			<div style = "display:flex;flex-direction:row;">
+				<p style = "margin-left: 40px">
+				Имя клиента, адрес, контактная информация
+				</p>
+				<p style = "margin-left: 100px">
+				Наименование изделия 
+				</p>
+				<p style = "margin-left: 100px">
+				Количество
+				</p>
+				
+		</div>
+		
+		</div>
+		
+		<div style="height: 500px; width: 100%; ">
+		
+			<div class = "order" style="height: 80px; width: 100%; margin-top: 15px; margin-left: 15px; display:flex;flex-direction:row; margin-top: 50px;">
+				<p style = "margin-left: 40px">Инфа1<p>
+				<p style = "margin-left: 350px">Наименование</p>
+				<input type = "number" min = "0" max = "1000" style = "width: 50px; height: 40px; margin-left: 170px; margin-top: 5px"/>
+				
+				<input type="submit" name="submit" value="Confirm" style = "background-color: #ebb572; border-radius: 8px; margin-left: 150px; width: 75px; height: 40px" />
+				<input type="submit" name="submit" value="Delete" style = "background-color: #ebb572; border-radius: 8px; margin-left: 20px; width: 75px;  height: 40px" />
+				
+				
+			</div>
+			<div class = "order" style="height: 100px; width: 100%; margin-top: 15px; margin-left: 15px; display:flex;flex-direction:row; margin-top: 50px;">
+				<p style = "margin-left: 40px">Инфа1<p>
+				<p style = "margin-left: 350px">Наименование</p>
+				<input type = "number" min = "0" max = "1000" style = "width: 50px; height: 40px; margin-left: 170px; margin-top: 5px"/>
+				
+				<input type="submit" name="submit" value="Confirm" style = "background-color: #ebb572; border-radius: 8px; margin-left: 150px; width: 75px; height: 40px" />
+				<input type="submit" name="submit" value="Delete" style = "background-color: #ebb572; border-radius: 8px; margin-left: 20px; width: 75px;  height: 40px" />
+				
+			</div>
+			<div class = "order" style="height: 100px; width: 100%; margin-top: 15px; margin-left: 15px; display:flex;flex-direction:row; margin-top: 50px;">
+				<p style = "margin-left: 40px">Инфа1<p>
+				<p style = "margin-left: 350px">Наименование</p>
+				<input type = "number" min = "0" max = "1000" style = "width: 50px; height: 40px; margin-left: 170px; margin-top: 5px"/>
+				
+				<input type="submit" name="submit" value="Confirm" style = "background-color: #ebb572; border-radius: 8px; margin-left: 150px; width: 75px; height: 40px" />
+				<input type="submit" name="submit" value="Delete" style = "background-color: #ebb572; border-radius: 8px; margin-left: 20px; width: 75px;  height: 40px" />
+				
+			</div>
+			
+			
+		</div>
+    
+    </main>
+    
+    </div>
+    <div class="downskoe-menu">
+        <ul class="top-menu" id="ulmenu">
+            <li class="menu-item" id="home" onclick="makeRequest('home.php');">Home</li>
+            <li class="menu-item" id="menu"onclick="makeRequest('menu.php');window.scrollTo(0, 0);">Menu</li>
+            <li class="menu-item" id="basket"onclick="makeRequest('basket.php');">Basket</li>
+            <li class="menu-item" id="reg" onclick="makeRequest('signup.php');">Register</li>	
+            <li class="menu-item" id="log" onclick="makeRequest('login.php');">Log in</li></ul>
+        </div>
+    <footer></footer>	
+    
+    
+    </body></html>
