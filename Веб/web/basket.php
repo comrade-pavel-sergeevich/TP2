@@ -1,3 +1,3 @@
 <?php
-include("корзина.html");
+include("корзина2.html");
 ?>
