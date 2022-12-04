@@ -91,7 +91,7 @@ header {
 	background-color:#383838;
 }
 .downskoe-menu {
-    width: 40%;
+    width: fit-content;
     z-index: 2;
     background: inherit;
 	background-color:#212121;
@@ -201,7 +201,7 @@ input[name="deal"] {
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: fixed;
+    /* position: fixed; */
     left: 20%;
     width: 60%;
     z-index: 1;
@@ -245,7 +245,7 @@ main h1 {
 }
 
 .do-block {
-    position: fixed;
+    /* position: fixed; */
     width: 100%;
     display: flex;
     flex-direction: column;

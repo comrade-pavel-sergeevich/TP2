@@ -9,7 +9,7 @@
 
 <body onload="checkHash();">
 <header><div class="top-menu">
-<img src="css/лого.jpg" style="height:90%">
+	<img src="css/лого.jpg" style="height:90%;user-select: none;pointer-events: none;" user-select:="" none;="">
 
 <div style="display:flex; flex-direction: column;height:100%;width:100%">
 <p style="color:white;margin-bottom:0;font-size: 24px;margin-top:5px;">Сладкий хлеб</p>
@@ -18,7 +18,7 @@
 <img src="css/search_pic.png" style="height:50%"></div>
 </div>
 
-<img src="css/basket.png" style="height:90%;cursor: pointer;" onclick="makeRequest('basket.php');" >
+<img src="css/basket.png" oncontextmenu="return false" style="height:90%;cursor: pointer;-webkit-user-drag: none;user-select: none;" onclick="makeRequest('basket.php');">
 </div>
 </header>
 

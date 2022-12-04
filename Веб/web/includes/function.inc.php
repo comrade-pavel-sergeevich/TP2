@@ -10,31 +10,31 @@
 		}
 		return $result;
 	}
-	function existUser($pdo, $email){
-		$sql ="SELECT * FROM users WHERE mail = ?;";
+	function existUser($pdo, $login){
+		$sql ="SELECT * FROM users WHERE login = ?;";
 		$stmt = $pdo->prepare($sql);
-		$stmt -> execute([$email]);
+		$stmt -> execute([$login]);
 		
 		if($stmt){
 			return($stmt->rowCount()===1);
 		}
 	}
-	function createUser($pdo, $name, $email, $pwd){
-		$sql="INSERT INTO users (name, mail, password) VALUES(?,?,?);";
+	function createUser($pdo, $ln, $fn, $pn, $phn, $login, $email, $pwd){
+		$sql="INSERT INTO users  VALUES(NULL, ?,?,?,?,?,?,?);";
 		try{
 			$stmt = $pdo->prepare($sql);
 			//$hashPwd = password_hash($pwd, PASSWORD_BCRYPT);
-			$stmt -> execute([$name,$email,$pwd]);
+			$stmt -> execute([$ln, $fn, $pn, $email,$phn, $login, $pwd]);
 		}
 		catch(PDOExpression $e){
 			exit();
 		}
 	}
-	function login($pdo, $email, $pwd){
-		$sql="SELECT password FROM users WHERE name=?";
+	function login($pdo, $login, $pwd){
+		$sql="SELECT password FROM users WHERE login=?";
 		try{
 			$stmt = $pdo->prepare($sql);
-			$stmt -> execute([$email]);
+			$stmt -> execute([$login]);
 		}
 		catch(PDOExpression $e){
 			header("location: ../index.php?reg_form=login&error=stmt&message=".$e->get);

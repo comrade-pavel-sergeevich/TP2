@@ -1,10 +1,10 @@
 <?php 
-		$email = $_GET['email'];
+		$email = $_GET['login'];
 	
 		require_once 'function.inc.php';
 		require_once 'dbpdoconnection.inc.php';
 		
-		if(existUser($pdo, $email))			
+		if(existUser($pdo, $login))			
 		{			
 			echo "exist";	exit();		
 		}

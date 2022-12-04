@@ -19,13 +19,13 @@ const checkHash = () => {
 		if(data !== '')
 	{
 		document.getElementById("reg").outerHTML="<li class=\"menu-item\" id=\"reg\" onclick=\"logout();\">LogOut</li>";		
-		document.getElementById("home").outerHTML="<li class=\"menu-item\" id=\"home\" onclick=\"makeRequest('do.php');\">TP</li>";
+		//document.getElementById("home").outerHTML="<li class=\"menu-item\" id=\"home\" onclick=\"makeRequest('do.php');\">TP</li>";
 		document.getElementById("log").outerHTML="<li class=\"menu-item\" id=\"log\">Heil, "+data+"</li>";
-		if(url!="logout"){
-			window.location.hash="do";
-			makeRequest('do.php');
-			return;
-		}
+		// if(url!="logout"){
+		// 	window.location.hash="do";
+		// 	makeRequest('do.php');
+		// 	return;
+		// }
 		makeRequest(window.location.hash.slice(1)+'.php');
 	}
 	else{
@@ -56,9 +56,9 @@ function logout(){
 	type: 'Get',
 	url: 'includes/logout.php',
 	dataType: 'text'
-	}).done(function(data){})
+	}).done(function(data){checkHash();})
 	//makeRequest('home.php');	
-	checkHash();
+	//checkHash();
 }
 function login(){
 	let name=document.getElementById('login').value;
@@ -80,11 +80,15 @@ function login(){
 	})
 }
 function register(){
+	let ln=document.getElementById('last_name').value;
+	let fn=document.getElementById('first_name').value;
+	let pn=document.getElementById('patronymic').value;
+	let phn=document.getElementById('phone').value;
 	let login=document.getElementById('login').value;
 	let email=document.getElementById('email').value;
 	let pwd = document.getElementById('pwd').value;
 	let pwdrepeat = document.getElementById('pwdrepeat').value;
-	if(email==""|pwd==""|pwdrepeat==""){
+	if(email==""|pwd==""|pwdrepeat==""|ln==""|fn==""|pn==""|login==""|phn==""){
 		document.getElementById('error').innerHTML='<span style = "color:red">Заполните поля</span>';return;}
 	if(pwd!=pwdrepeat){
 		document.getElementById('error').innerHTML='<span style = "color:red">Пароли не совпадают</span>';return;}	
@@ -94,16 +98,16 @@ function register(){
 	$.ajax({
 	type: 'Get',
 	url: 'includes/logincheck.inc.php',
-	data: {email: email},
+	data: {login: login},
 	dataType: 'text'	
 	}).done(function(data){
 		if(data=='exist'){
-			document.getElementById('error').innerHTML='<span style = "color:red">Email уже занят</span>'; return;
+			document.getElementById('error').innerHTML='<span style = "color:red">Login уже занят</span>'; return;
 		}
 		$.ajax({
 		type: 'Get',
 		url: 'includes/signupnew.inc.php',
-		data: {login:login, email: email, pwd: pwd},	
+		data: {ln:ln, fn:fn, pn:pn, phn:phn, login:login, email: email, pwd: pwd},	
 		})
 		window.location.hash="login";
 				checkHash();
