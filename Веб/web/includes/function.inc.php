@@ -66,5 +66,20 @@
 		return $row->name;
 	}
 	
+	function getmenu($pdo){
+		$sql="SELECT * FROM products ORDER BY product_id";
+		try{
+			$stmt = $pdo->prepare($sql);
+			$stmt -> execute();
+		}
+		catch(PDOExpression $e){
+			header("location: ../index.php?error=stmt&message=".$e->get);
+			echo '<span style = "color:red">фиговый запрос</span>';
+			exit();
+		}
+		return $stmt->fetchAll();
+		//$data = $stmt->fetchAll();
+		//return json_encode($data, JSON_UNESCAPED_UNICODE);
+	}
 	
 ?>
