@@ -1,5 +1,5 @@
 <?php 
-		$email = $_GET['login'];
+		$login = $_POST['login'];
 	
 		require_once 'function.inc.php';
 		require_once 'dbpdoconnection.inc.php';

@@ -54,23 +54,25 @@ CREATE OR REPLACE TABLE user_role(
 );
 
 CREATE OR REPLACE TABLE address(
-	address_id VARCHAR(255) PRIMARY KEY,
-	street VARCHAR(255) NOT NULL,
-	building VARCHAR(255) NOT NULL,
-	house VARCHAR(255) NOT NULL,
-	porch VARCHAR(255) NOT NULL,
-	floor VARCHAR(255) NOT NULL,
-	room VARCHAR(255) NOT NULL,
-	user_id INTEGER REFERENCES users(user_id)
+	address_id INTEGER PRIMARY KEY AUTO_INCREMENT,
+	address_name VARCHAR(255) NOT NULL
+);
+
+CREATE OR REPLACE TABLE user_address(
+id INTEGER PRIMARY KEY AUTO_INCREMENT,
+user_id INTEGER REFERENCES users(user_id),
+address_id INTEGER REFERENCES address(address_id)
 );
 
 INSERT INTO role VALUES (NULL,'user'),
 			(NULL,'admin');
-INSERT INTO users VALUES (0,"administratorov","admin","adminovich","iiysv@yandex.ru","8-800-555-35-35","admin","$2y$10$kEBvkwYrUN1vJncBCSJBw.Sw/Ph5/2k7CS8luRcjyZMdrckcu5Xpm");
-INSERT INTO user_role VALUES(NULL,0, 2);
+INSERT INTO users VALUES (1,"administratorov","admin","adminovich","iiysv@yandex.ru","8-800-555-35-35","admin","$2y$10$kEBvkwYrUN1vJncBCSJBw.Sw/Ph5/2k7CS8luRcjyZMdrckcu5Xpm");
+INSERT INTO user_role VALUES(NULL,1, 2);
 INSERT INTO product_group VALUES (NULL, 'Десерты', ''),
 				    ( NULL,'Выпечка', ''),
 		                    (NULL, 'Напитки', '');
 INSERT INTO products VALUES (NULL,"Вкусный сырник из лучшего швейцарского сыра",300,228,1,"photos/syrnik.jpg"),
 							(NULL,"Шоколадное полено из древесины карельской берёзы",1337,404,1,"photos/poleno.jpg"),
 							(NULL,"Розовозелёнослоновские макароны альденте по-флотски",1941,1945,1,"photos/macaroni.jpg");
+INSERT INTO address VALUES(NULL,"д. Полудёновка, д. 2А");
+INSERT INTO user_address VALUES(NULL,1,1)
