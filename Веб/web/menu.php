@@ -41,7 +41,7 @@
             <div class="menu_izdeliya">
             <img src="$value[product_image_url]"
              style="width:321px; height:201px;border-radius: 10px;">
-            <button style="border-radius: 7px;margin-left: 240px;margin-top: -50px;cursor: pointer;background: transparent;"><img src="https://cdn-icons-png.flaticon.com/512/1374/1374128.png" width="40" ></button>
+            <button style="border-radius: 7px;margin-left: 240px;margin-top: -50px;cursor: pointer;background: transparent;"onclick="Add($value[product_id])"><img src="https://cdn-icons-png.flaticon.com/512/1374/1374128.png" width="40" ></button>
             <div style="border: 2px solid black;border-radius: 5px;border-style: dotted">
                 <p class = "menu_text"> $value[description]</p>  
                 <div style="display: flex; flex-direction: row;justify-content: space-between;">

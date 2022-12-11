@@ -63,6 +63,10 @@ id INTEGER PRIMARY KEY AUTO_INCREMENT,
 user_id INTEGER REFERENCES users(user_id),
 address_id INTEGER REFERENCES address(address_id)
 );
+CREATE OR REPLACE TABLE basket(
+user_id INTEGER REFERENCES users(user_id),
+product_id INTEGER REFERENCES products(product_id)
+);
 
 INSERT INTO role VALUES (NULL,'user'),
 			(NULL,'admin');

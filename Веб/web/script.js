@@ -332,3 +332,11 @@ function chad(id, name,masid){
 			addrs[masid-1]=name;
 		});
 }
+function Add(id){
+	
+}
+function Chan_count(count,price){
+	let sum = count*price;	
+	document.getElementById('sum').innerText = sum;
+
+}
