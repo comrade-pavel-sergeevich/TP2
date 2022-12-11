@@ -337,6 +337,11 @@ function Add(id){
 }
 function Chan_count(count,price,id){
 	let sum = count*price;	
-	document.getElementById('sum'+id).innerText = sum;
-
+	document.getElementById('sum'+id).innerText = sum+" руб.";
+	let sums=document.getElementsByName("sum");
+	let itogo=0;
+	sums.forEach(element => {
+		itogo+=parseInt("0"+element.innerHTML.slice(0,-5));
+	});
+	document.getElementById("itogo").innerHTML=itogo+" руб.";
 }
