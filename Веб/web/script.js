@@ -335,8 +335,8 @@ function chad(id, name,masid){
 function Add(id){
 	
 }
-function Chan_count(count,price){
+function Chan_count(count,price,id){
 	let sum = count*price;	
-	document.getElementById('sum').innerText = sum;
+	document.getElementById('sum'+id).innerText = sum;
 
 }
